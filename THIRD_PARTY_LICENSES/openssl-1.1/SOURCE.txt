@@ -1,0 +1,9 @@
+OpenSSL 1.1.1k — the OpenSSL License and the original SSLeay License (LICENSE)
+
+Bundled in the Linux build, which runs on AlmaLinux 8: its Python 3.11 links
+the distribution's OpenSSL (openssl-libs-1.1.1k-14.el8_6) for the ssl and
+hashlib modules. AlmaLinux maintains this release with security fixes for the
+life of AlmaLinux 8. Redistributed unmodified.
+
+Upstream: https://www.openssl.org/
+Distribution source: https://repo.almalinux.org/vault/ (openssl-1.1.1k-14.el8_6)

@@ -1,0 +1,40 @@
+Phonon-2 add-on for Subtitld
+Copyright 2026 Subtitld contributors
+
+This add-on is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It runs the Phonon engine and the Phonon-2 model from Fermion Research. It does
+not ship the model weights. They are downloaded from Hugging Face on first use,
+and the download is checked against a sha256 pinned in the fermion-research
+package.
+
+================================================================================
+Phonon engine (fermion-research)
+================================================================================
+
+Copyright 2026 Fermion Research. Licensed under the Apache License, Version 2.0.
+
+    https://github.com/fermionresearch/phonon
+
+================================================================================
+Phonon-2 model weights
+================================================================================
+
+Licensed under the Creative Commons Attribution 4.0 International licence
+(CC-BY-4.0). Model card and changes to the base model:
+
+    https://huggingface.co/FermionResearch/Phonon-2
+    https://huggingface.co/FermionResearch/Phonon-2/blob/main/NOTICE
+
+Phonon-2 is derived from NVIDIA's Parakeet TDT 0.6B v3
+(nvidia/parakeet-tdt-0.6b-v3), (c) NVIDIA Corporation, licensed under CC-BY-4.0.
+
+    https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3
+    https://creativecommons.org/licenses/by/4.0/
+
+================================================================================
+Test data
+================================================================================
+
+tests/data/jfk.flac is whisper.cpp's samples/jfk.wav, public domain. It is
+copied from the addon-whispercpp repository.

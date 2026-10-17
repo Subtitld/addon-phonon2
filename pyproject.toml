@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "subtitld-addon-phonon2"
+version = "0.0.1"
+description = "Subtitld add-on: offline English speech-to-text with Phonon-2"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Subtitld", email = "jbopen@gmail.com" }]
+requires-python = ">=3.10"
+
+# fermion-research is pinned EXACTLY. Phonon is pre-1.0, and the add-on relies
+# on fermion's loader for the model cache location and the sha256 pins. Bump it
+# deliberately, with the real-inference test run.
+# It pulls in torch and transformers on Linux and Windows; see README "Development"
+# for installing the CPU build of torch first.
+dependencies = [
+    "fermion-research==0.2.11",
+    "platformdirs>=3",
+    # The model download trusts this CA bundle on top of the system store. The
+    # frozen OpenSSL cannot find the user's store on every system.
+    "certifi",
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.10"]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+phonon2-addon = "phonon2_addon.__main__:main"
+
+[tool.setuptools]
+packages = ["phonon2_addon"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "transcription: runs the real Phonon-2 engine; set PHONON2_TEST_TRANSCRIPTION=1",
+]

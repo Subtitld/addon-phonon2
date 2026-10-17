@@ -1,0 +1,23 @@
+libsndfile 1.2.2 — LGPL-2.1-or-later (libsndfile/COPYING)
+
+Bundled unmodified as _soundfile_data/libsndfile_x86_64.so, from the soundfile
+0.14.0 wheel, which the add-on uses to read audio. It is linked dynamically, so
+it can be replaced by another libsndfile 1.x build.
+
+It is the Linux binary of https://github.com/bastibe/libsndfile-binaries at
+commit 39f3e270a4649576c72630db081658524ce7bea8 (sha256 c872fb84af2afc0e...),
+built by that commit's linux_build.sh, with these linked in statically:
+
+  Component    Version  Licence                     Text here
+  LAME         3.100    LGPL-2.0-or-later           lame/COPYING, lame/LICENSE
+  mpg123       1.32.3   LGPL-2.1-or-later           mpg123/COPYING
+  libFLAC      1.4.3    BSD-3-Clause (Xiph.Org)     flac/COPYING.Xiph
+  libogg       1.3.5    BSD-3-Clause                libogg/COPYING
+  libvorbis    1.3.7    BSD-3-Clause                libvorbis/COPYING
+  Opus         1.4      BSD-3-Clause                opus/COPYING
+
+Complete corresponding source: phonon2-addon-<version>-libsndfile-source.tar.gz,
+attached to the same GitHub release as this archive. It holds linux_build.sh and
+the upstream release tarballs it builds from, each with its sha256.
+tools/build_libsndfile_source.py builds it and checks that the bundled file is
+this binary.

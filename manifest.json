@@ -1,0 +1,65 @@
+{
+  "manifest_version": 1,
+  "id": "phonon2",
+  "version": "0.0.1",
+  "display_name": "Phonon-2 (offline, English)",
+  "summary": "Offline English speech-to-text with Phonon-2 from Fermion Research: a 164 MB model that runs on the CPU. The model downloads once, on first use, and is checked against a pinned sha256.",
+  "author": "Subtitld",
+  "homepage": "https://github.com/Subtitld/addon-phonon2",
+  "license": "Apache-2.0 (add-on and engine); Phonon-2 weights CC-BY-4.0",
+  "executable": "bin/phonon2-addon",
+  "protocol": 1,
+  "startup_timeout_sec": 60,
+  "platforms": [
+    "linux"
+  ],
+  "tasks": [
+    "asr.transcribe"
+  ],
+  "languages": [
+    "en"
+  ],
+  "models": [
+    {
+      "id": "phonon-2",
+      "display_name": "Phonon-2",
+      "size_mb": 164,
+      "english_only": true,
+      "license": "CC-BY-4.0",
+      "default": true
+    }
+  ],
+  "config_schema": {
+    "fields": [
+      {
+        "key": "models_dir",
+        "type": "file",
+        "label": "Models folder",
+        "default": "",
+        "help": "Leave empty to share Subtitld's model cache. To use another folder, type its path, or browse to any file inside it."
+      },
+      {
+        "key": "threads",
+        "type": "select",
+        "label": "CPU threads",
+        "default": "0",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "4",
+          "8",
+          "16"
+        ],
+        "help": "0 = auto. Applies when the model loads."
+      },
+      {
+        "key": "hotwords",
+        "type": "string",
+        "label": "Hotwords",
+        "default": "",
+        "help": "Names and terms to favour, separated by commas (up to 25). The audio still decides."
+      }
+    ]
+  }
+}

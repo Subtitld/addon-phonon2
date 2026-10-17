@@ -1,0 +1,7 @@
+mpdecimal 2.5.1 — BSD-2-Clause (LICENSE.txt)
+
+Bundled in the Linux build, which runs on AlmaLinux 8: its Python 3.11 uses the
+distribution's libmpdec (mpdecimal-2.5.1-3.el8) for the decimal module.
+Redistributed unmodified.
+
+Upstream: https://www.bytereef.org/mpdecimal/

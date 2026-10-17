@@ -1,0 +1,18 @@
+libquadmath — LGPL-2.1-or-later (COPYING.LIB)
+
+The Linux archive carries two builds of it, both unmodified distribution builds
+renamed only by auditwheel:
+
+  * libquadmath-96973f99-*.so.0.0.0 (numpy.libs/, scipy.libs/): CentOS 7's
+    libquadmath-4.8.5-44.el7, GNU build-id 549b4c82347785459571c79239872ad31509dcf4.
+    It comes with the scipy-openblas wheels that numpy and scipy use.
+    Source package: gcc-4.8.5-44.el7.src.rpm.
+  * libquadmath-828275a7.so.0.0.0 (scipy.libs/): AlmaLinux 8's
+    libquadmath-8.5.0-26.el8_10.alma.1, GNU build-id
+    84f2ad8237013ef80f316c581f675e4dc1b483bd. It comes with scipy's own wheel.
+    Source package: gcc-8.5.0-26.el8_10.alma.1.src.rpm.
+
+Complete corresponding source of both:
+phonon2-addon-<version>-libquadmath-source.tar.gz, attached to the same GitHub
+release as this archive. tools/build_libquadmath_source.py builds it, and checks
+that every bundled libquadmath is one of these two builds.
